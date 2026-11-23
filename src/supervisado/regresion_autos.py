@@ -19,7 +19,7 @@ def main():
     # contar etiquetas 'y' es lo que define el aprendizaje supervisado.
     datos = pd.DataFrame({
         "kilometraje_km": [51715, 7980, 82497, 85199, 62948, 35000, 91000, 22000],
-        "anio": [2012, 2013, 2012, 2011, 2008, 2014, 2010, 2015]
+        "anio": [2012, 2013, 2012, 2011, 2008, 2014, 2010, 2015],
         "precio_usd": [15985, 19600, 14095, 12490, 13985, 21200, 11500, 23500],
     })
 
@@ -34,7 +34,7 @@ def main():
     # fit(x, y) ajusta los parametros del modelo para encontrar la relacion
     # lineal que mejor aproxima 'y' y apartir de 'x' minimiza el error.
 
-    modelo = LinearRegresion()
+    modelo = LinearRegression()
     modelo.fit(X, y)
 
     # paso -> 5 Evaluar el desempeño del modelo con mean absolute Error
@@ -46,7 +46,7 @@ def main():
 
     #paso ->6 hacer una prediccion sobre un auto nuevo *sin precio conocido*
     # alimentamos nuevas caracteristicas X al modelo ya entrenado para estimar 'y'
-    auto_nuevo = pd.Dataframe({"kilometraje_km": [40000], "anio"[2013]})
+    auto_nuevo = pd.DataFrame({"kilometraje_km": [40000], "anio": [2013]})
     precio_estimado = modelo.predict(auto_nuevo)[0]
 
     # paso 7 -> Mostramos los resultados claros en la consola para registrarlos o compartirlos
